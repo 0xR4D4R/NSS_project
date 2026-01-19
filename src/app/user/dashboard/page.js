@@ -133,7 +133,8 @@ export default function UserDashboard() {
                       </p>
                     </div>
                     <div className="text-right">
-                      <p className="font-bold text-green-600 text-lg">+${recentDonation.amount}</p>
+                      <p className="font-bold text-green-600 text-lg">+
+₹{recentDonation.amount}</p>
                       <span className="bg-green-100 text-green-600 text-[10px] px-2 py-1 rounded-full font-bold uppercase">Success</span>
                     </div>
                   </div>

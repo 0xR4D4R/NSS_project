@@ -79,7 +79,7 @@ export default function DonatePage() {
             {/* Amount Label */}
             <div>
               <h3 className="text-lg font-bold text-gray-800 flex items-center gap-2 mb-4">
-                <span className="text-pink-500">♡</span> Select Amount
+                <span className="text-pink-500"></span> Select Amount
               </h3>
               
               {/* Preset Buttons Grid */}
@@ -129,7 +129,7 @@ export default function DonatePage() {
                 <span className="animate-pulse">Processing...</span>
               ) : (
                 <>
-                  <span>💳</span> Donate {amount ? `₹${amount}` : ""}
+                  <span></span> Donate {amount ? `₹${amount}` : ""}
                 </>
               )}
             </button>
@@ -137,7 +137,7 @@ export default function DonatePage() {
             {/* Footer Trust Badge */}
             <div className="text-center pt-4 border-t border-gray-100">
               <p className="text-xs text-gray-400 flex items-center justify-center gap-1">
-                🔒 Secure payment via Stripe · Tax Deductible
+                Secure payment via Stripe · Tax Deductible
               </p>
             </div>
 

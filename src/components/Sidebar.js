@@ -7,10 +7,10 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   const navItems = [
-    { name: 'Dashboard', href: '/user/dashboard', icon: '📊' },
-    { name: 'Donate', href: '/user/donate', icon: '❤' },
-    { name: 'Donation History', href: '/user/history', icon: '🕒' },
-    { name: 'Profile', href: '/user/profile', icon: '👤' },
+    { name: 'DASHBOARD', href: '/user/dashboard', },
+    { name: 'DONATE', href: '/user/donate',  },
+    { name: 'DONATION HISTORY', href: '/user/history',  },
+    { name: 'PROFILE', href: '/user/profile',  },
   ];
 
   return (

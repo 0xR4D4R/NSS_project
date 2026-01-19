@@ -94,7 +94,8 @@ export default function ProfilePage() {
                   {/* Total Amount Block */}
                   <div>
                     <p className="text-6xl font-extrabold text-gray-900 mb-2">
-                      ${stats.totalAmount.toLocaleString()}
+                      
+₹{stats.totalAmount.toLocaleString()}
                     </p>
                     <p className="text-gray-500 font-medium">Total Donated</p>
                   </div>

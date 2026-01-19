@@ -80,9 +80,7 @@ export default function DonationHistoryPage() {
             <p className="text-gray-500 mt-1">Track every contribution you've made.</p>
           </div>
           
-          <button className="px-5 py-2.5 bg-white border border-gray-200 text-gray-700 rounded-xl text-sm font-bold hover:bg-gray-50 shadow-sm transition-all flex items-center gap-2">
-            <span>📥</span> Export CSV
-          </button>
+          
         </div>
 
         {/* Main Card Container */}
@@ -108,7 +106,7 @@ export default function DonationHistoryPage() {
           {!loading && donations.length === 0 && (
             <div className="p-16 text-center flex flex-col items-center justify-center">
               <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center text-3xl mb-4">
-                📜
+            
               </div>
               <h3 className="text-lg font-bold text-gray-900">No donations yet</h3>
               <p className="text-gray-500 mb-6 max-w-sm">
@@ -134,7 +132,7 @@ export default function DonationHistoryPage() {
                         <span suppressHydrationWarning>{date}</span>
                     </p>
                     <p className="text-xs text-gray-400 mt-0.5 flex items-center gap-1">
-                        <span>🕒</span>
+                        
                         <span suppressHydrationWarning>{time}</span>
                     </p>
                   </div>
