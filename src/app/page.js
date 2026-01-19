@@ -128,7 +128,7 @@ export default function AuthPage() {
                 <label className="block text-xs font-bold text-gray-700 mb-2 uppercase">Full Name</label>
                 <div className="relative">
                   <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg">웃</span>
-                  <input onChange={(e) => setName(e.target.value)} type="text" placeholder="John Doe" className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 outline-none focus:ring-2 focus:ring-purple-500" />
+                  <input onChange={(e) => setName(e.target.value)} type="text" placeholder="John Doe" className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 outline-none focus:ring-2 focus:ring-purple-500 text-gray-900 placeholder-gray-600" />
                 </div>
               </div>
             )}
@@ -136,14 +136,14 @@ export default function AuthPage() {
               <label className="block text-xs font-bold text-gray-700 mb-2 uppercase">Email</label>
               <div className="relative">
                 <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg">✉</span>
-                <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="you@example.com" className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 outline-none focus:ring-2 focus:ring-purple-500" />
+                <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="you@example.com" className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 outline-none focus:ring-2 focus:ring-purple-500 text-gray-900 placeholder-gray-600" />
               </div>
             </div>
             <div>
               <label className="block text-xs font-bold text-gray-700 mb-2 uppercase">Password</label>
               <div className="relative">
                 <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg">⚷</span>
-                <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="••••••••" className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 outline-none focus:ring-2 focus:ring-purple-500" />
+                <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="••••••••" className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 outline-none focus:ring-2 focus:ring-purple-500 text-gray-900 placeholder-gray-600" />
               </div>
             </div>
 
