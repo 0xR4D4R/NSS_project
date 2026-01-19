@@ -6,16 +6,20 @@ import Sidebar from "../../../../components/Sidebar";
 export default function SuccessPage() {
   const searchParams = useSearchParams();
   const router = useRouter();
+  
+  // Get both IDs from the URL
   const donationId = searchParams.get("donation_id");
+  const sessionId = searchParams.get("session_id"); 
+  
   const [status, setStatus] = useState("verifying");
 
   useEffect(() => {
-    if (donationId) {
-      // Automatically confirm the donation in DB
+    if (donationId && sessionId) {
+      // Send BOTH to the backend
       fetch("/api/confirm-donation", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ donationId }),
+        body: JSON.stringify({ donationId, sessionId }), // ✅ Changed
       })
       .then((res) => {
         if (res.ok) setStatus("success");
@@ -23,14 +27,14 @@ export default function SuccessPage() {
       })
       .catch(() => setStatus("error"));
     }
-  }, [donationId]);
+  }, [donationId, sessionId]);
 
   return (
     <div className="flex min-h-screen bg-gray-50">
       <Sidebar />
       <main className="flex-1 ml-64 p-10 flex items-center justify-center">
         <div className="bg-white p-10 rounded-3xl shadow-xl text-center max-w-lg">
-          {status === "verifying" && <p className="text-xl font-bold">Verifying payment...</p>}
+          {status === "verifying" && <p className="text-xl font-bold animate-pulse">Verifying payment with Stripe...</p>}
           
           {status === "success" && (
             <>
@@ -38,12 +42,12 @@ export default function SuccessPage() {
                 <span className="text-4xl">✅</span>
               </div>
               <h1 className="text-3xl font-bold text-gray-900 mb-4">Thank You!</h1>
-              <p className="text-gray-500 mb-8">Your donation was successful. We truly appreciate your support.</p>
+              <p className="text-gray-500 mb-8">Your donation was successful and the Receipt ID has been generated.</p>
               <button 
-                onClick={() => router.push("/user/dashboard")}
+                onClick={() => router.push("/user/history")}
                 className="bg-purple-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-purple-700 transition"
               >
-                Go to Dashboard
+                View Receipt
               </button>
             </>
           )}
