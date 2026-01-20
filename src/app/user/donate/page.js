@@ -8,7 +8,6 @@ export default function DonatePage() {
   const [loading, setLoading] = useState(false);
   const { data: session } = useSession();
 
-  // ✅ CHANGED: Preset amounts suitable for INR
   const presetAmounts = [100, 500, 1000, 2000, 5000, 10000];
 
   const handlePresetClick = (val) => setAmount(val);
@@ -53,36 +52,22 @@ export default function DonatePage() {
       
       {/* --- ANIMATED BACKGROUND --- */}
       <div className="fixed inset-0 z-0">
-        {/* Animated Blob 1 */}
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-        {/* Animated Blob 2 */}
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-        {/* Animated Blob 3 */}
         <div className="absolute -bottom-32 left-1/3 w-96 h-96 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
       </div>
 
       <main className="flex-1 ml-64 p-10 relative z-10 flex items-center justify-center min-h-screen">
-        
-        {/* CENTERED CARD */}
         <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-white p-8 max-w-lg w-full transform transition-all hover:scale-[1.01]">
           
-          {/* Header Section */}
           <div className="text-center mb-8">
-            
             <h1 className="text-3xl font-extrabold text-gray-900">Support Our Cause</h1>
             <p className="text-gray-500 mt-2">Your contribution in Rupees (₹) makes a direct impact.</p>
           </div>
 
-          {/* Donation Form */}
           <div className="space-y-6">
-            
-            {/* Amount Label */}
             <div>
-              <h3 className="text-lg font-bold text-gray-800 flex items-center gap-2 mb-4">
-                <span className="text-pink-500"></span> Select Amount
-              </h3>
-              
-              {/* Preset Buttons Grid */}
+              <h3 className="text-lg font-bold text-gray-800 flex items-center gap-2 mb-4">Select Amount</h3>
               <div className="grid grid-cols-3 gap-3">
                 {presetAmounts.map((preset) => (
                   <button
@@ -100,13 +85,11 @@ export default function DonatePage() {
               </div>
             </div>
 
-            {/* Custom Amount Input */}
             <div className="relative">
               <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 ml-1">
                 Or Enter Custom Amount
               </label>
               <div className="relative">
-                {/* ✅ CHANGED: Rupee Symbol */}
                 <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 font-bold text-lg">₹</span>
                 <input
                   type="number"
@@ -119,7 +102,6 @@ export default function DonatePage() {
               </div>
             </div>
 
-            {/* Donate Button */}
             <button 
               onClick={handleDonate}
               disabled={loading}
@@ -128,45 +110,18 @@ export default function DonatePage() {
               {loading ? (
                 <span className="animate-pulse">Processing...</span>
               ) : (
-                <>
-                  <span></span> Donate {amount ? `₹${amount}` : ""}
-                </>
+                <>Donate {amount ? `₹${amount}` : ""}</>
               )}
             </button>
 
-            {/* Footer Trust Badge */}
             <div className="text-center pt-4 border-t border-gray-100">
-              <p className="text-xs text-gray-400 flex items-center justify-center gap-1">
+              <p className="text-xs text-gray-400">
                 Secure payment via Stripe · Tax Deductible
               </p>
             </div>
-
           </div>
         </div>
-
       </main>
-
-      {/* --- CSS FOR ANIMATIONS --- */}
-      <style jsx global>{`
-        @keyframes blob {
-          0% { transform: translate(0px, 0px) scale(1); }
-          33% { transform: translate(30px, -50px) scale(1.1); }
-          66% { transform: translate(-20px, 20px) scale(0.9); }
-          100% { transform: translate(0px, 0px) scale(1); }
-        }
-        .animate-blob {
-          animation: blob 7s infinite;
-        }
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-        .animation-delay-4000 {
-          animation-delay: 4s;
-        }
-        .animate-bounce-slow {
-          animation: bounce 3s infinite;
-        }
-      `}</style>
     </div>
   );
 }
